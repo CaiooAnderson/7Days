@@ -4,6 +4,7 @@ html, body {
     background-color: #111;
     box-sizing: border-box;
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 * {
@@ -215,15 +216,14 @@ a h2 {
 }
 
 .series {
-    position: relative;
     margin-top: 12.5rem;
-    margin-bottom: 40px;
     background: linear-gradient(to top, #111 50%, #000000 85%, transparent 100%);
     width: 100%;
     box-sizing: border-box;
     min-height: 300px;
 }
 
+.series,
 .filmes,
 .bombando,
 .minha-lista {
@@ -233,12 +233,13 @@ a h2 {
 
 .lista-filmes {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    /* flex-wrap: wrap;
+    justify-content: space-between; */
     gap: 20px;
     margin-top: 10px;
     margin-left: 2.5rem;
     margin-right: 2.5rem;
+    transition: transform 0.3s ease-in-out;
 }
 
 .lista-filmes a {
@@ -277,4 +278,64 @@ a h2 {
     margin-bottom: 10px;
     color: #fff;
     margin-left: 2.5rem;
+}
+
+.carousel {
+    position: relative;
+    overflow: hidden;
+}
+
+.carousel input[type="radio"] {
+    display: none; /* Os inputs de rádio ficam invisíveis */
+}
+
+.lista-filmes {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Navegação anterior */
+.carousel__prev:checked ~ .lista-filmes {
+    transform: translateX(0);
+}
+
+/* Navegação próxima */
+.carousel__next:checked ~ .lista-filmes {
+    transform: translateX(-100%);
+}
+
+/* Estilo das setas (controles) */
+.carousel__prev,
+.carousel__next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.carousel__prev {
+    left: 30px;
+    transform: translateY(-50%) rotate(180deg);
+}
+
+.carousel__next {
+    right: 30px;
+    transform: translateY(-50%);
+}
+
+.carousel__prev img,
+.carousel__next img {
+    width: 30px; 
+    height: auto;
+    filter: invert(100%); 
+}
+
+/* Responsividade */
+@media only screen and (max-width: 600px) {
+    .lista-filmes a {
+        width: calc(33% - 16px); /* Ajuste para telas menores */
+    }
 }
