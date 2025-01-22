@@ -233,8 +233,6 @@ a h2 {
 
 .lista-filmes {
     display: flex;
-    /* flex-wrap: wrap;
-    justify-content: space-between; */
     gap: 20px;
     margin-top: 10px;
     margin-left: 2.5rem;
@@ -248,17 +246,14 @@ a h2 {
     height: 220px;
     position: relative;
     overflow: hidden;
+    border-radius: 4px;
+    transition: transform 0.75s, filter 0.5s ease, box-shadow 0.5s ease;
 }
 
 .lista-filmes img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 4px;
-    transition: transform 0.75s, filter 0.5s ease, box-shadow 0.5s ease;
-}
-
-.lista-filmes a {
     border-radius: 4px;
     transition: transform 0.75s, filter 0.5s ease, box-shadow 0.5s ease;
 }
@@ -286,25 +281,17 @@ a h2 {
 }
 
 .carousel input[type="radio"] {
-    display: none; /* Os inputs de rádio ficam invisíveis */
+    display: none;
 }
 
-.lista-filmes {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-/* Navegação anterior */
 .carousel__prev:checked ~ .lista-filmes {
     transform: translateX(0);
 }
 
-/* Navegação próxima */
 .carousel__next:checked ~ .lista-filmes {
     transform: translateX(-100%);
 }
 
-/* Estilo das setas (controles) */
 .carousel__prev,
 .carousel__next {
     position: absolute;
@@ -333,9 +320,8 @@ a h2 {
     filter: invert(100%); 
 }
 
-/* Responsividade */
 @media only screen and (max-width: 600px) {
     .lista-filmes a {
-        width: calc(33% - 16px); /* Ajuste para telas menores */
+        width: calc(33% - 16px);
     }
 }
