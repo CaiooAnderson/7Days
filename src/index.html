@@ -16,11 +16,11 @@
             <img class="netflix-texto" src="img/netflix-text.svg" alt="Netflix">
             <div>
                 <ul>
-                    <li><a href="">Início</a></li>
-                    <li><a href="">Séries</a></li>
-                    <li><a href="">Filmes</a></li>
-                    <li><a href="">Bombando</a></li>
-                    <li><a href="">Minha lista</a></li>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#series">Séries</a></li>
+                    <li><a href="#filmes">Filmes</a></li>
+                    <li><a href="#bombando">Bombando</a></li>
+                    <li><a href="#minha-lista">Minha lista</a></li>
                 </ul>
             </div>
             <div id="menu-direita">
@@ -30,7 +30,7 @@
                 <img class="profile-setinha" src="img/seta-baixo.svg" alt="Opções">
             </div>
         </div>
-        <div class="filme-info">
+        <div class="filme-info" id="inicio">
             <div class="filme-principal">
                 <div class="titulo">
                     <div class="titulo-header">
@@ -55,7 +55,7 @@
                 </div>
             </div>
         
-            <div class="series">
+            <div class="series" id="series">
                 <h2>Séries</h2>
                 <div class="lista-filmes">
                     <a href=""><img src="img/filme1.svg" alt=""></a>
@@ -66,7 +66,7 @@
                 </div>
             </div>
         
-            <div class="filmes">
+            <div class="filmes" id="filmes">
                 <h2>Filmes</h2>
                 <div class="lista-filmes">
                     <a href=""><img src="img/filme6.svg" alt=""></a>
@@ -77,7 +77,7 @@
                 </div>
             </div>
 
-            <div class="bombando">
+            <div class="bombando" id="bombando">
                 <h2>Bombando</h2>
                 <div class="lista-filmes">
                     <a href=""><img src="img/filme11.svg" alt=""></a>
@@ -88,7 +88,7 @@
                 </div>
             </div>
 
-            <div class="minha-lista">
+            <div class="minha-lista" id="minha-lista">
                 <h2>Minha lista</h2>
                 <div class="carousel">
                     <label for="prev" class="carousel__prev">
@@ -97,15 +97,24 @@
                     <label for="next" class="carousel__next">
                         <img src="img/arrow.svg" alt="Seta Direita">
                     </label>
-                    <input type="radio" name="carousel" id="prev" class="carousel__prev" />
-                    <input type="radio" name="carousel" id="next" class="carousel__next" checked />
+                    <input type="radio" name="carousel" id="prev" class="carousel__prev" checked />
+                    <input type="radio" name="carousel" id="next" class="carousel__next" />
 
                 <div class="lista-filmes">
-                    <a href=""><img src="img/filme16.svg" alt=""></a>
-                    <a href=""><img src="img/filme17.svg" alt=""></a>
-                    <a href=""><img src="img/filme18.svg" alt=""></a>
-                    <a href=""><img src="img/filme19.svg" alt=""></a>
-                    <a href=""><img src="img/filme20.svg" alt=""></a>
+                    <div class="pagina-filmes">
+                        <a href=""><img src="img/filme16.svg" alt=""></a>
+                        <a href=""><img src="img/filme17.svg" alt=""></a>
+                        <a href=""><img src="img/filme18.svg" alt=""></a>
+                        <a href=""><img src="img/filme19.svg" alt=""></a>
+                        <a href=""><img src="img/filme20.svg" alt=""></a>
+                    </div>
+                    <div class="pagina-series">
+                        <a href=""><img src="img/filme15.svg" alt=""></a>
+                        <a href=""><img src="img/filme15.svg" alt=""></a>
+                        <a href=""><img src="img/filme15.svg" alt=""></a>
+                        <a href=""><img src="img/filme15.svg" alt=""></a>
+                        <a href=""><img src="img/filme15.svg" alt=""></a>
+                    </div>
                 </div>
             </div>
         </div>
