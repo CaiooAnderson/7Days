@@ -217,7 +217,7 @@ a h2 {
 
 .series {
     margin-top: 12.5rem;
-    background: linear-gradient(to top, #111 50%, #000000 85%, transparent 100%);
+    background: linear-gradient(to top, #111 50%, #000000 96%, transparent 100%);
     width: 100%;
     box-sizing: border-box;
     min-height: 300px;
@@ -282,26 +282,30 @@ a h2 {
     margin-left: 2.5rem;
 }
 
-.carousel {
+.carousel_bombando,
+.carousel_minha-lista,
+.carousel_filmes,
+.carousel_series{
     position: relative;
     transition: transform 0.5s ease;
 }
 
-.carousel input[type="radio"] {
+.carousel_minha-lista input[type="radio"],
+.carousel_bombando input[type="radio"],
+.carousel_filmes input[type="radio"],
+.carousel_series input[type="radio"] {
     display: none;
 }
 
-.carousel__prev:checked ~ .lista-filmes {
-    transform: translateX(0);
-}
-
-.carousel__next:checked ~ .lista-filmes {
-    transform: translateX(-100%);
-}
-
-.carousel__prev,
-.carousel__next {
-    position: absolute;
+.carousel__prev_minha-lista,
+.carousel__next_minha-lista,
+.carousel__prev_bombando,
+.carousel__next_bombando,
+.carousel__prev_filmes,
+.carousel__next_filmes,
+.carousel__prev_series,
+.carousel__next_series {
+   position: absolute;
     top: 50%;
     transform: translateY(-50%);
     border: none;
@@ -310,17 +314,26 @@ a h2 {
     z-index: 2;
 }
 
-.carousel__prev {
+.carousel__prev_minha-lista,
+.carousel__prev_bombando,
+.carousel__prev_filmes,
+.carousel__prev_series {
     left: 30px;
     transform: translateY(-50%) rotate(180deg);
 }
 
-.carousel__next {
+.carousel__next_minha-lista,
+.carousel__next_bombando, 
+.carousel__next_filmes,
+.carousel__next_series {
     right: 30px;
     transform: translateY(-50%);
 }
 
-.carousel label {
+.carousel_minha-lista label,
+.carousel_bombando label,
+.carousel_filmes label,
+.carousel_series label {
     padding: 0px;
     margin: 10px;
     background: rgba(0, 0, 0, 0.5);
@@ -335,19 +348,40 @@ a h2 {
     min-width: 100%;
 }
 
-.minha-lista {
+.minha-lista, .bombando, .filmes,.series{
     width: 100%;
     position: relative;
     overflow: hidden;
 }
 
-.carousel__prev img,
-.carousel__next img {
+.carousel__prev_minha-lista img,
+.carousel__next_minha-lista img,
+.carousel__prev_bombando img,
+.carousel__next_bombando img,
+.carousel__prev_filmes img,
+.carousel__next_filmes img,
+.carousel__prev_series img,
+.carousel__next_series img {
     width: 40px;
     padding: 7.5px;
     height: 100%;
     filter: invert(100%); 
 }
+
+#prev_bombando:checked ~ .lista-filmes,
+#prev_minha-lista:checked ~ .lista-filmes,
+#prev_filmes:checked ~ .lista-filmes,
+#prev_series:checked ~ .lista-filmes {
+    transform: translateX(0)
+}
+
+#next_bombando:checked ~ .lista-filmes,
+#next_minha-lista:checked ~ .lista-filmes,
+#next_filmes:checked ~ .lista-filmes,
+#next_series:checked ~ .lista-filmes {
+    transform: translateX(-100%);
+}
+
 
 @media only screen and (max-width: 600px) {
     .lista-filmes a {
